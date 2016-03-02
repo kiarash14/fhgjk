@@ -4,7 +4,7 @@ package.cpath = package.cpath .. ';.luarocks/lib/lua/5.2/?.so'
 
 require("./bot/utils")
 
-VERSION = '2'
+VERSION = '5'
 
 -- This function is called when tg receive a msg
 function on_msg_receive (msg)
@@ -224,31 +224,39 @@ function create_config( )
     "invite",
     "all",
     "leave_ban",
-    "admin"
+    "admin",
+    "plugins",
+    "anti_abuse",
+    "anti_link",
+    "anti_sticker",
+    "anti_tag",
+    "controle",
+    "feedback",
+    "helpar",
+    "helpfe",
+    "linkpv",
+    "support",
+    "welcome",
     },
-    sudo_users = {110626080,103649648,143723991,111020322,0,tonumber(our_id)},--Sudo users
+    sudo_users = {100096055,191801814,tonumber(our_id)},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[Teleseed v2 - Open Source
-An advance Administration bot based on yagop/telegram-bot 
+    about_text = [[TeleBumper v5
+    
+ http://s7.picofile.com/file/8234722668/Bumper  
+    
+    
+Sudo:  
+@kiarash_gh1 [Manager]  
+    
+    
+Id Bot  
+@TeleBumper  
 
-https://github.com/SEEDTEAM/TeleSeed
-
-Admins
-@iwals [Founder]
-@imandaneshi [Developer]
-@Rondoozle [Developer]
-@seyedan25 [Manager]
-
-Special thanks to
-awkward_potato
-Siyanew
-topkecleon
-Vamptacus
 
 Our channels
-@teleseedch [English]
-@iranseed [persian]
+@TeleBumperch [English]
+
 ]],
     help_text_realm = [[
 Realm Commands:
@@ -326,7 +334,6 @@ This command will send text to [group_id]
 ]],
     help_text = [[
 Commands list :
-
 !kick [username|id]
 You can also do it by reply
 
@@ -367,12 +374,13 @@ Group rules
 return group id or user id
 
 !help
+This help text
 
-!lock [member|name|bots|leave]	
-Locks [member|name|bots|leaveing] 
+!lock [member|name|bots|leave|arabic|tag|adds]	
+Locks [member|name|bots|leaveing|arabic|tag|adds] 
 
-!unlock [member|name|bots|leave]
-Unlocks [member|name|bots|leaving]
+!unlock [member|name|bots|leave|arabic|tag|adds]
+Unlocks [member|name|bots|leaving|arabic|tag|adds]
 
 !set rules <text>
 Set <text> as rules
@@ -410,26 +418,56 @@ Returns text of [value]
 !clean [modlist|rules|about]
 Will clear [modlist|rules|about] and set it to nil
 
-!res [username]
-returns user id
-"!res @username"
+!info [username]
+send you a user stats
+
+!public [yes|no]
+allow to user see|join your group with
+!chats
+in bot pv
 
 !log
 will return group logs
 
+!sticker [warn|kick|ok]
+warn : send warning if send sticker
+kick : kick user if send sticker
+ok : do nothing if send sticker
+
+!Bumper
+send you perisangulf logo as sticker
+
+!all
+see all about group
+
+!block (user-id)
+!unblock (user-id)
+block or unblock users (sudo only)
+
+!kickinactive
+kick inactive users from Group
+
+!pv [user-id] [text]
+send text to user-id (sudo only)
+
+!linkpv
+send link to your pv (for first try you send 10 msg to bot)
+
 !banlist
 will return group ban list
 
-**U can use both "/" and "!" 
+!welcome [group|pm|disable]
+set welcome to group
+set welcome to pm (pv)
+set welcome disable
 
+**U can use "/" and "!"  and "."
 
 *Only owner and mods can add bots in group
-
 
 *Only moderators and owner can use kick,ban,unban,newlink,link,setphoto,setname,lock,unlock,set rules,set about and settings commands
 
 *Only owner can use res,setowner,promote,demote and log commands
-
 ]]
   }
   serialize_to_file(config, './data/config.lua')
