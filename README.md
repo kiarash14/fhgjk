@@ -474,7 +474,7 @@ Create a realm using !createrealm command
 
 
 Do not contact **us** In private for support.
-Join our bot development group by sending `/join 56670147` to [@TeleSeed](https://telegram.me/TeleSeed)
+Join our bot development group by sending `/join 56670147` to [@TeleBumper](https://telegram.me/TeleBumper)
 
 _If you are using /join service for first time you have to send it 11 times ( Bot is spam reported )_
 
